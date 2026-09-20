@@ -1,7 +1,7 @@
 - type: entity
   name: Shoebill
   parent: [SimpleMobBase, StripableInventoryBase]
-  id: MobShoebill
+  id: LustMobShoebill
   description: A large bird from hot places and your terrifying dreams.
   components:
   - type: Sprite
