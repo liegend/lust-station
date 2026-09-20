@@ -21,7 +21,7 @@ ent-SpawnMobCrabAtmos = спавнер краб Тропико
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobFoxRenault = спавнер лиса Алиса
     .desc = { ent-MarkerBase.desc }
---> Lust-Edit-Name <--
+# --> Lust-Edit-Name <--
 ent-SpawnMobMcGriff = спавнер китоглав Олег
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobHamsterHamlet = спавнер хомяк Гамлет
