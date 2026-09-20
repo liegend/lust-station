@@ -170,7 +170,7 @@
     - state: ai
   - type: ConditionalSpawner
     prototypes:
-    - MobMcGriff
+    - MobShoebill # Lust-Edit
 
 - type: entity
   parent: MarkerBase
