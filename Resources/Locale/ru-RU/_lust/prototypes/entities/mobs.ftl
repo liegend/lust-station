@@ -1,2 +1,2 @@
-ent-MobShoebill = китоглав
+ent-LustMobShoebill = китоглав
     .desc = Огромная птица из жарких климатов и страшных снов.
