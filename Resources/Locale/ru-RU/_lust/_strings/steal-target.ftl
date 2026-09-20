@@ -1,4 +1,4 @@
-steal-target-groups-animal-shoebill = Китоглав
+steal-target-groups-animal-shoebill = китоглав
 
 ent-AbductorVictimMcShoeStealObjective = { ent-BaseAbductorVictimStealAnimalObjective }
     .desc = { ent-BaseAbductorVictimStealAnimalObjective.desc }
