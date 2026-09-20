@@ -65,3 +65,5 @@
     attackMemoryLength: 10
   - type: NPCRetaliation
   - type: FactionException
+  - type: StealTarget
+    stealGroup: AnimalShoebill
