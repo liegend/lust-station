@@ -170,6 +170,7 @@
     - state: ai
   - type: ConditionalSpawner
     prototypes:
+    # - MobMcGriff # Lust-Edit
     - LustMobShoebill # Lust-Edit
 
 - type: entity
