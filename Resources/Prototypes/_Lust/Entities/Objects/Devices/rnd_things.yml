@@ -20,7 +20,7 @@
         type: ResearchClientBoundUserInterface
   - type: ResearchClient
   - type: Analyzer
-    pointsPerScan: 7500
+    pointsPerScan: 4500
     possibleComponents:
     - Gun
     - MeleeWeapon
