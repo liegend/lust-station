@@ -1,0 +1,45 @@
+- type: entity
+  parent: BaseItem
+  id: LustAnalyzer
+  name: spectral locator
+  suffix: Always Powered
+  description: Appears to be a modified anomaly locator. Seems very old.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Research/anomalyscanner.rsi
+    color: "#073565"
+    layers:
+      - state: icon
+        map: ["enum.AnomalyScannerVisualLayers.Base"]
+  - type: Appearance
+  - type: ActivatableUI
+    key: enum.ResearchClientUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.ResearchClientUiKey.Key:
+        type: ResearchClientBoundUserInterface
+  - type: ResearchClient
+  - type: Analyzer
+    pointsPerScan: 7500
+    possibleComponents:
+    - Gun
+    - MeleeWeapon
+    - EntityStorage
+    - Tool
+    - Blocking
+    - PowerCell
+    - Flash
+    - Radio
+    - MobThresholds
+    - Construction
+    - Item
+    - Analyzer
+    - Seed
+    - WallMount
+    - PointLight
+    - Clothing
+    - ApcPowerReceiver
+    - AmbientOnPowered
+    - Material
+    - Holopad
