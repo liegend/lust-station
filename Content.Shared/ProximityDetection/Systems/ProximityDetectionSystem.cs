@@ -3,6 +3,7 @@ using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.ProximityDetection.Components;
 using Content.Shared.ProximityDetection.Events;
 using Content.Shared.Tag;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.ProximityDetection.Systems;
@@ -15,6 +16,8 @@ public sealed partial class ProximityDetectionSystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private ItemToggleSystem _toggle = default!;
     [Dependency] private TagSystem _tagSystem = default!; // Lust-Edit
+
+    private static readonly ProtoId<TagPrototype> CanAddPointsTag = "CanAddPoints"; // Lust-Edit
 
     public override void Initialize()
     {
@@ -56,9 +59,8 @@ public sealed partial class ProximityDetectionSystem : EntitySystem
                 continue;
 
             // Lust-Edit-Start Начисление очков, если у предмета есть тег CanAddPoints
-            UpdateTarget((uid, component));
 
-            if (component.Target != null && _tagSystem.HasTag(uid, "CanAddPoints"))
+            if (component.Target != null && _tagSystem.HasTag(uid, CanAddPointsTag))
             {
                 var pointsToAdd = (int)(50 * component.UpdateCooldown.TotalSeconds);
                 var pointsEv = new AddResearchPointsEvent(uid, pointsToAdd);

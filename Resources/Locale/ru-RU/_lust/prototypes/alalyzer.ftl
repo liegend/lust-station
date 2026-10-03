@@ -1,6 +1,6 @@
 analyzer-task-gun = Огнестрел
 analyzer-task-meleeweapon = Опасное
-analyzer-task-EntityStorage = Вместилище
+analyzer-task-entityStorage = Вместилище
 analyzer-task-tool = Вечный помощник
 analyzer-task-blocking = Защита!
 analyzer-task-powercell = Энергия...
@@ -9,17 +9,15 @@ analyzer-task-radio = Нужно что то шумное...
 analyzer-task-mobthresholds = Требуется что либо органическое...
 analyzer-task-item = Что либо...?
 analyzer-task-construction = Твердое
-analyzer-task-Analyzer = Знакомое.
-analyzer-task-Seed = Ранний цветок.
-analyzer-task-WallMount = Настенное.
-analyzer-task-PointLight = Свет?
-analyzer-task-Clothing = Одежда
-analyzer-task-ApcPowerReceiver = Вне видимости..
-analyzer-task-AmbientOnPowered = ?Мат?
-analyzer-task-Material = Нечто многослойное
-analyzer-task-Holopad = нужен голопад
-
-дальше сами, я устал @4_ydo
+analyzer-task-analyzer = Знакомое.
+analyzer-task-seed = Ранний цветок.
+analyzer-task-wallMount = Настенное.
+analyzer-task-pointLight = Свет?
+analyzer-task-clothing = Одежда
+analyzer-task-apcPowerReceiver = Вне видимости..
+analyzer-task-ambientOnPowered = ?Мат?
+analyzer-task-material = Нечто многослойное
+analyzer-task-holopad = нужен голопад
 
 analyzer-task-complete = Очки зачислены.
 analyzer-wrong-target = Это не тот предмет.

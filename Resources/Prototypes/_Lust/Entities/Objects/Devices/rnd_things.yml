@@ -1,9 +1,8 @@
 - type: entity
   parent: BaseItem
   id: LustAnalyzer
-  name: spectral locator
-  suffix: Always Powered
-  description: Appears to be a modified anomaly locator. Seems very old.
+  name: object scanner
+  description: A new development based on established things.
   components:
   - type: Sprite
     sprite: Objects/Specific/Research/anomalyscanner.rsi
