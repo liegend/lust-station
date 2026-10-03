@@ -26,12 +26,12 @@
     - MeleeWeapon
     - EntityStorage
     - Tool
-    - Blocking
     - PowerCell
     - Flash
     - Radio
     - MobThresholds
     - Construction
+    - Destructible
     - Item
     - Analyzer
     - Seed
@@ -39,6 +39,6 @@
     - PointLight
     - Clothing
     - ApcPowerReceiver
-    - AmbientOnPowered
+    - Injurable
     - Material
     - Holopad
