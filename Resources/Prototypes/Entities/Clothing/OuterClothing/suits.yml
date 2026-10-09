@@ -158,6 +158,11 @@
   - type: HideLayerClothing
     slots:
     - Tail
+  # Lust-Edit-Start
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  # Lust-Edit-End
   # Sunrise-Start
   - type: Tag
     tags:
