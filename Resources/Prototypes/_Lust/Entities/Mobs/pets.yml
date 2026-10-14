@@ -94,8 +94,6 @@
         1.0
       FollowRange: !type:Single
         1.5
-  - type: TTS
-    voice: Pudge
   - type: Speech
     speechSounds: Squeak
     speechVerb: SmallMob
