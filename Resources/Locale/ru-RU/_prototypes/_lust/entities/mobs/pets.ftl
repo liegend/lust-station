@@ -1,2 +1,2 @@
-ent-PetBigRat = биг маус
+ent-LustPetBigRat = биг маус
     .desc = { ent-SimpleMobBase.desc }

@@ -1,6 +1,6 @@
 - type: petSelection
-  id: PetSelectionBigRat
+  id: LustPetSelectionBigRat
   name: pet-selection-mouse-name
   description: pet-selection-mouse-description
-  petEntity: PetBigRat
+  petEntity: LustPetBigRat
   sponsorOnly: true
