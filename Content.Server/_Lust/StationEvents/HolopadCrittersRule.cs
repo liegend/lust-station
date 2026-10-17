@@ -9,8 +9,7 @@ using Content.Shared.Holopad;
 namespace Content.Server.StationEvents.Events;
 
 /// <summary>
-/// Station event that spawns critters from holopads.
-/// Similar to VentCrittersRule but for holopads.
+/// этот ивент спавнит выбраные ентити на голопадах, только на Lust
 /// </summary>
 public sealed class HolopadCrittersRule : StationEventSystem<HolopadCrittersRuleComponent>
 {
@@ -24,7 +23,6 @@ public sealed class HolopadCrittersRule : StationEventSystem<HolopadCrittersRule
             return;
         }
 
-        // Get all holopads with spawn location component
         var holopadQuery = EntityQueryEnumerator<HolopadComponent, TransformComponent>();
         var validHolopads = new List<EntityCoordinates>();
 
@@ -33,7 +31,6 @@ public sealed class HolopadCrittersRule : StationEventSystem<HolopadCrittersRule
             if (!transform.Anchored)
                 continue;
 
-            // Must be on the same station
             if (CompOrNull<StationMemberComponent>(transform.GridUid)?.Station == station)
             {
                 validHolopads.Add(transform.Coordinates);
@@ -48,9 +45,6 @@ public sealed class HolopadCrittersRule : StationEventSystem<HolopadCrittersRule
 
         if (component.SpecialEntries.Count > 0)
         {
-            var specialSpawns = EntitySpawnCollection.GetSpawns(component.SpecialEntries, RobustRandom);
-
-            // Determine which holopads to use
             List<EntityCoordinates> targetHolopads;
 
             if (component.SpawnFromAllHolopads)
@@ -69,36 +63,42 @@ public sealed class HolopadCrittersRule : StationEventSystem<HolopadCrittersRule
                 }
             }
 
+            var specialSpawns = EntitySpawnCollection.GetSpawns(component.SpecialEntries, RobustRandom);
+
+            EntityCoordinates? guaranteedHolopad = null;
+
+            if (specialSpawns.Count > 0)
+            {
+                guaranteedHolopad = RobustRandom.Pick(targetHolopads);
+
+                foreach (var spawn in specialSpawns)
+                {
+                    Spawn(spawn, guaranteedHolopad.Value);
+                }
+            }
+
             foreach (var holopad in targetHolopads)
             {
-                foreach (var spawn in specialSpawns)
+                if (guaranteedHolopad.HasValue && holopad.Equals(guaranteedHolopad.Value) && specialSpawns.Count > 0)
+                    continue;
+
+                foreach (var spawn in EntitySpawnCollection.GetSpawns(component.SpecialEntries, RobustRandom))
                 {
                     Spawn(spawn, holopad);
                 }
             }
         }
 
-        // Spawn regular entries on all holopads (if configured)
         if (component.Entries.Count > 0 && component.SpawnFromAllHolopads)
         {
-            var regularSpawns = EntitySpawnCollection.GetSpawns(component.Entries, RobustRandom);
-
             foreach (var holopad in validHolopads)
             {
+                var regularSpawns = EntitySpawnCollection.GetSpawns(component.Entries, RobustRandom);
+
                 foreach (var spawn in regularSpawns)
                 {
                     Spawn(spawn, holopad);
                 }
-            }
-        }
-
-        // Disable holopads after spawning (optional)
-        if (component.DisableHolopadsAfterSpawn)
-        {
-            var holopads = EntityQueryEnumerator<HolopadComponent>();
-            while (holopads.MoveNext(out var holopadUid, out _))
-            {
-                RemComp<HolopadComponent>(holopadUid);
             }
         }
 

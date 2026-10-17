@@ -1,19 +1,19 @@
 - type: storytellerMetadata
-  id: RadiationOutburst
+  id: LustRadiationOutburst
   threatType: MajorCalm
   threatCost: 30
   minStationStrength: 15
   maxStress: 75
 
 - type: storytellerMetadata
-  id: RadiationStorm
+  id: LustRadiationStorm
   threatType: MajorCalm
   threatCost: 120
   minStationStrength: 15
   maxStress: 75
 
 - type: storytellerMetadata
-  id: HoloCarpSpawn
+  id: LustHoloCarpSpawn
   threatType: MajorCalm
   threatCost: 45
   minStationStrength: 15

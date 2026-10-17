@@ -12,7 +12,7 @@
   - type: RuleGrids
 
 - type: entity
-  id: RadiationOutburst
+  id: LustRadiationOutburst
   parent: BaseGameRule
   components:
   - type: StationEvent
@@ -25,7 +25,7 @@
   - type: RadiationOutburstRule
 
 - type: entity
-  id: RadiationStorm
+  id: LustRadiationStorm
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
@@ -43,7 +43,7 @@
       prob: 1.0
 
 - type: entity
-  id: HoloCarpSpawn
+  id: LustHoloCarpSpawn
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
