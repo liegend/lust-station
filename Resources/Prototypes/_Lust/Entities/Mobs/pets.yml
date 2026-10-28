@@ -100,29 +100,28 @@
     allowedEmotes: ['Squeak']
   - type: Sprite
     drawdepth: SmallMobs
-    sprite: Mobs/Animals/mouse.rsi
-    color: "#f09260"
+    sprite: Mobs/Animals/rat.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
-      state: mouse-2
+      state: rat
     scale: 1.25,1.25
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: mouse-2
+        Base: rat
       Critical:
-        Base: dead-2
+        Base: dead
       Dead:
-        Base: splat-2
+        Base: splat
   - type: Item
     size: Tiny
   - type: SpriteMovement
     movementLayers:
       movement:
-        state: mouse-moving-2
+        state: rat-moving
     noMovementLayers:
       movement:
-        state: mouse-2
+        state: rat
   - type: Clothing
     quickEquip: false
     sprite: Mobs/Animals/mouse.rsi
@@ -182,10 +181,3 @@
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
   - type: NightVision
-  - type: HolidayVisuals
-    holidays:
-      festive:
-      - WinterPresents
-  - type: HolidayRsiSwap
-    sprite:
-      festive: _Sunrise/Mobs/Animals/mouse_santa.rsi
