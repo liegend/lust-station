@@ -1,8 +1,8 @@
 ﻿using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.ProximityDetection.Components;
-using Content.Shared.ProximityDetection.Events;
 using Content.Shared.Tag;
+using Content.Shared.Research.Events;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -59,12 +59,11 @@ public sealed partial class ProximityDetectionSystem : EntitySystem
                 continue;
 
             // Lust-Edit-Start Начисление очков, если у предмета есть тег CanAddPoints
-
             if (component.Target != null && _tagSystem.HasTag(uid, CanAddPointsTag))
             {
                 var pointsToAdd = (int)(50 * component.UpdateCooldown.TotalSeconds);
                 var pointsEv = new AddResearchPointsEvent(uid, pointsToAdd);
-                RaiseLocalEvent(uid, ref pointsEv);
+                RaiseLocalEvent(ref pointsEv);
             }
             // Lust-Edit-End
             UpdateTarget((uid, component));

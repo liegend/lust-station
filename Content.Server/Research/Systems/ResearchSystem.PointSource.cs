@@ -1,7 +1,6 @@
 using Content.Server.Power.EntitySystems;
 using Content.Server.Research.Components;
 using Content.Shared.Research.Components;
-using Content.Shared.ProximityDetection.Components; // Lust-Edit для гост локаторов
 
 namespace Content.Server.Research.Systems;
 

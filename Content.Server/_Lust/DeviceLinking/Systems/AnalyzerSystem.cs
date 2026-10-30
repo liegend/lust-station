@@ -1,8 +1,9 @@
 using Content.Shared.Analyzer;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
-using Robust.Shared.Random;
+using Content.Shared.Research.Events;
 using Content.Shared.Interaction;
+using Robust.Shared.Random;
 
 namespace Content.Shared.Analyzer;
 
@@ -55,8 +56,8 @@ public sealed partial class AnalyzerSystem : EntitySystem
 
         _popup.PopupEntity(Loc.GetString("analyzer-task-complete"), ent, args.User, PopupType.Large);
 
-        var pointsEv = new AnalyzerAddPointsEvent(ent, ent.Comp.PointsPerScan);
-        RaiseLocalEvent(ent, ref pointsEv);
+        var pointsEv = new AddResearchPointsEvent(ent, ent.Comp.PointsPerScan);
+        RaiseLocalEvent(ref pointsEv);
 
         ent.Comp.CurrentTargetComponent = null;
         Dirty(ent);
