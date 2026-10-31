@@ -1492,6 +1492,12 @@
   - type: ItemBorgModule
     hands:
     - hand:
+        emptyRepresentative: ClothingHeadHatBeret
+        emptyLabel: borg-slot-heat-empty
+        whitelist:
+          tags:
+          - WhitelistChameleon
+    - hand:
         emptyRepresentative: MaterialXenoborgCrystal
         emptyLabel: borg-slot-xenoborg-crystal-empty
         whitelist:
